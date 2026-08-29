@@ -377,7 +377,64 @@
         </section>
 
     </main>
+<script src="electric-charges-and-fields-data.js"></script>
 
+<script>
+    const pyqContainer = document.querySelector(".section:last-child");
+
+    pyqContainer.innerHTML = `
+        <h2>📅 Previous Year Questions</h2>
+    `;
+
+    electricChargesAndFieldsPYQs.forEach((pyq, index) => {
+
+        const questionHTML = `
+            <div class="question">
+
+                <p><strong>CBSE ${pyq.year} PYQ</strong></p>
+
+                <h3>
+                    Q${index + 1}. ${pyq.question}
+                </h3>
+
+                <div class="options">
+
+                    <div class="option">A. ${pyq.options.A}</div>
+                    <div class="option">B. ${pyq.options.B}</div>
+                    <div class="option">C. ${pyq.options.C}</div>
+                    <div class="option">D. ${pyq.options.D}</div>
+
+                </div>
+
+                <div class="answer">
+                    <strong>✅ Correct Answer: ${pyq.answer}</strong>
+                </div>
+
+                <div class="solution">
+
+                    <p><strong>🧠 Concept:</strong> ${pyq.concept}</p>
+
+                    <p><strong>📌 Topic:</strong> ${pyq.topic}</p>
+
+                    <p><strong>⭐ Difficulty:</strong> ${pyq.difficulty}</p>
+
+                    <br>
+
+                    <strong>📖 Detailed Explanation</strong>
+
+                    <p>
+                        ${pyq.explanation}
+                    </p>
+
+                </div>
+
+            </div>
+        `;
+
+        pyqContainer.innerHTML += questionHTML;
+
+    });
+</script>
 </body>
 
 </html>
